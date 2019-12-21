@@ -136,8 +136,9 @@ const VideoContainer = styled.div`
 const VideoTitle = styled.div`
   margin-top: 0.75rem;
   width: 100%;
-  @media (min-width: 480px) {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
+  @media (max-width: 480px) {
+    margin-top: 0.25rem;
   }
 `
 
