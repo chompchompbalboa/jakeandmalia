@@ -37,7 +37,9 @@ const App = () => {
       <HeaderContainer>
         <HeaderEmoji><span role="img" aria-label="Christmas Tree">🎄</span></HeaderEmoji>
         <HeaderText>
-          Jake and Malia's Christmas Greetings
+          Jake and Malia's
+          <br/>
+          Christmas Greetings
         </HeaderText>
         <HeaderEmoji><span role="img" aria-label="Christmas Tree">🎄</span></HeaderEmoji>
       </HeaderContainer>
@@ -88,7 +90,7 @@ const HeaderContainer = styled.div`
   @media (max-width: 480px) {
   justify-content: space-between;
     padding: 2rem 0;
-  font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 `
 
@@ -97,6 +99,7 @@ const HeaderText = styled.div`
 `
 const HeaderEmoji = styled.div`
   width: 3%;
+  font-size: 3.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
