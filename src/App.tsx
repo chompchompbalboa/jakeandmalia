@@ -13,22 +13,22 @@ const App = () => {
     {
       title: "2019",
       src: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'19+(Stream).m4v", 
-      poster: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'19+Thumbnail.png"
+      poster: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'19+Thumbnail_med.png"
     },
     {
       title: "2018",
       src: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'18+(stream).mp4", 
-      poster: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'18+Thumbnail.png"
+      poster: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'18+Thumbnail_med.png"
     },
     {
       title: "2017",
       src: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'17+(stream).mp4", 
-      poster: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'17+Thumbnail.png"
+      poster: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'17+Thumbnail_med.png"
     },
     {
       title: "2016",
       src: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'16+(stream).MOV", 
-      poster: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'16+Thumbnail.png"
+      poster: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'16+Thumbnail_med.png"
     },
   ]
 
@@ -50,6 +50,7 @@ const App = () => {
             <VideoTitle>{video.title}</VideoTitle>
             <StyledVideo
               controls
+              preload="none"
               poster={video.poster}
               src={video.src}/>
           </VideoContainer>
