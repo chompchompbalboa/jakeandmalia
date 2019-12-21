@@ -56,12 +56,12 @@ const App = () => {
         {hasPageLoaded && videos.map(video => (
           <VideoContainer
             key={video.src}>
-            <VideoTitle>{video.title}</VideoTitle>
             <StyledVideo
               controls
               preload="none"
               poster={video.poster}
               src={video.src}/>
+            <VideoTitle>{video.title}</VideoTitle>
           </VideoContainer>
         ))}
       </VideosContainer>
@@ -77,7 +77,7 @@ const Container = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  padding: 10vh;
+  padding: 10vh 15vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -99,7 +99,7 @@ const HeaderContainer = styled.div`
   text-align: center;
   white-space: nowrap;
   @media (max-width: 480px) {
-  justify-content: space-between;
+    justify-content: space-between;
     padding: 2rem 0;
     font-size: 1.5rem;
   }
@@ -134,12 +134,15 @@ const VideoContainer = styled.div`
 `
 
 const VideoTitle = styled.div`
-  margin-top: 2rem;
+  margin-top: 0.75rem;
   width: 100%;
+  @media (min-width: 480px) {
+    font-size: 1.25rem;
+  }
 `
 
 const StyledVideo = styled.video`
-  margin-top: 0.75rem;
+  margin-top: 1rem;
   width: 100%;
   height: auto;
 `
