@@ -1,7 +1,7 @@
 //-----------------------------------------------------------------------------
 // Imports
 //-----------------------------------------------------------------------------
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 //-----------------------------------------------------------------------------
@@ -9,6 +9,15 @@ import styled from 'styled-components'
 //-----------------------------------------------------------------------------
 const App = () => {
 
+  // State
+  const [ hasPageLoaded, setHasPageLoaded ] = useState(false)
+
+  // Effects
+  useEffect(() => {
+    setHasPageLoaded(true)
+  }, [])
+
+  // Videos
   const videos = [
     {
       title: "2019",
@@ -44,7 +53,7 @@ const App = () => {
         <HeaderEmoji><span role="img" aria-label="Christmas Tree">🎄</span></HeaderEmoji>
       </HeaderContainer>
       <VideosContainer>
-        {videos.map(video => (
+        {hasPageLoaded && videos.map(video => (
           <VideoContainer
             key={video.src}>
             <VideoTitle>{video.title}</VideoTitle>
