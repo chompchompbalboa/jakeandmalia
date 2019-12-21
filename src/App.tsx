@@ -88,6 +88,7 @@ const HeaderContainer = styled.div`
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
   text-align: center;
+  white-space: nowrap;
   @media (max-width: 480px) {
   justify-content: space-between;
     padding: 2rem 0;
