@@ -9,8 +9,27 @@ import styled from 'styled-components'
 //-----------------------------------------------------------------------------
 const App = () => {
 
-  const videoUrls = [
-    "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'19+(Stream).m4v"
+  const videos = [
+    {
+      title: "2019",
+      src: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'19+(Stream).m4v", 
+      poster: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'19+Thumbnail.png"
+    },
+    {
+      title: "2018",
+      src: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'18+(stream).mp4", 
+      poster: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'18+Thumbnail.png"
+    },
+    {
+      title: "2017",
+      src: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'17+(stream).mp4", 
+      poster: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'17+Thumbnail.png"
+    },
+    {
+      title: "2016",
+      src: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'16+(stream).MOV", 
+      poster: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'16+Thumbnail.png"
+    },
   ]
 
   return (
@@ -18,18 +37,22 @@ const App = () => {
       <HeaderContainer>
         <HeaderEmoji><span role="img" aria-label="Christmas Tree">🎄</span></HeaderEmoji>
         <HeaderText>
-          Jake and Malia's Christmas Videos
+          Jake and Malia's Christmas Greetings
         </HeaderText>
         <HeaderEmoji><span role="img" aria-label="Christmas Tree">🎄</span></HeaderEmoji>
       </HeaderContainer>
-      <VideoContainer>
-        {videoUrls.map(videoUrl => (
-          <StyledVideo
-            key={videoUrl}
-            controls
-            src={videoUrl}/>
+      <VideosContainer>
+        {videos.map(video => (
+          <VideoContainer
+            key={video.src}>
+            <VideoTitle>{video.title}</VideoTitle>
+            <StyledVideo
+              controls
+              poster={video.poster}
+              src={video.src}/>
+          </VideoContainer>
         ))}
-      </VideoContainer>
+      </VideosContainer>
     </Container>
   )
 }
@@ -54,22 +77,23 @@ const Container = styled.div`
 
 const HeaderContainer = styled.div`
   width: 100%;
-  padding: 5rem 0;
+  padding: 3rem 0;
+  font-size: 2.25rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  font-size: 1.75rem;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
   text-align: center;
   @media (max-width: 480px) {
+  justify-content: space-between;
     padding: 2rem 0;
+  font-size: 1.75rem;
   }
 `
 
 const HeaderText = styled.div`
   margin: 0 10%;
-  width: 75%;
 `
 const HeaderEmoji = styled.div`
   width: 3%;
@@ -79,14 +103,29 @@ const HeaderEmoji = styled.div`
   text-align: center;
 `
 
-const VideoContainer = styled.div`
+const VideosContainer = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `
 
+const VideoContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
+const VideoTitle = styled.div`
+  margin-top: 2rem;
+  width: 100%;
+`
+
 const StyledVideo = styled.video`
+  margin-top: 0.75rem;
   width: 100%;
   height: auto;
 `
