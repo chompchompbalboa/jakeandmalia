@@ -16,11 +16,16 @@ const App = () => {
   return (
     <Container>
       <HeaderContainer>
-        Jake and Malia's Christmas Videos
+        <HeaderEmoji><span role="img" aria-label="Christmas Tree">🎄</span></HeaderEmoji>
+        <HeaderText>
+          Jake and Malia's Christmas Videos
+        </HeaderText>
+        <HeaderEmoji><span role="img" aria-label="Christmas Tree">🎄</span></HeaderEmoji>
       </HeaderContainer>
       <VideoContainer>
         {videoUrls.map(videoUrl => (
           <StyledVideo
+            key={videoUrl}
             controls
             src={videoUrl}/>
         ))}
@@ -42,17 +47,36 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: 480px) {
+    padding: 2rem;
+  }
 `
 
 const HeaderContainer = styled.div`
   width: 100%;
   padding: 5rem 0;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  @media (max-width: 480px) {
+    padding: 2rem 0;
+  }
+`
+
+const HeaderText = styled.div`
+  margin: 0 10%;
+  width: 75%;
+`
+const HeaderEmoji = styled.div`
+  width: 3%;
+  display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  font-weight: bold;
-  font-family: 'Dancing Script', cursive;
+  text-align: center;
 `
 
 const VideoContainer = styled.div`
