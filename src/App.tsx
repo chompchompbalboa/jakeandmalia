@@ -20,6 +20,11 @@ const App = () => {
   // Videos
   const videos = [
     {
+      title: "2020",
+      src: "https://jakeandmalia.s3.amazonaws.com/Christmas+Video+2020+-+1.mp4", 
+      poster: "https://jakeandmalia.s3.amazonaws.com/2020+Thumbnail.jpg"
+    },
+    {
       title: "2019",
       src: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'19+(Stream).m4v", 
       poster: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+Greeting+'19+Thumbnail_med.png"
