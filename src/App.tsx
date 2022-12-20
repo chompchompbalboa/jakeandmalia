@@ -20,6 +20,11 @@ const App = () => {
   // Videos
   const videos = [
     {
+      title: "2022",
+      src: "https://jakeandmalia.s3.amazonaws.com/Carlson+Christmas+22.m4v", 
+      poster: "https://jakeandmalia.s3.amazonaws.com/2022+That's+a+Wrap+Thumbnail.jpg"
+    },
+    {
       title: "2021",
       src: "https://jakeandmalia.s3.amazonaws.com/Christmas+Video+2021.mov", 
       poster: "https://jakeandmalia.s3.amazonaws.com/2021_Thumbnail.jpg"
